@@ -9,10 +9,10 @@ interface NoteCarProps {
     date: Date;
     content: string;
   };
-  onNoteDelete: (id: string) => void;
+  onNoteDeleted: (id: string) => void;
 }
 
-export function NoteCard({ note, onNoteDelete }: NoteCarProps) {
+export function NoteCard({ note, onNoteDeleted }: NoteCarProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger className="rounded-md flex flex-col text-left bg-slate-800 p-5 gap-3 overflow-hidden relative outline-none hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400">
@@ -43,7 +43,7 @@ export function NoteCard({ note, onNoteDelete }: NoteCarProps) {
             <button
               type="button"
               className="w-full bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none font-medium group"
-              onClick={() => onNoteDelete(note.id)}
+              onClick={() => onNoteDeleted(note.id)}
             >
               Deseja{" "}
               <span className="text-red-400 group-hover:underline">
